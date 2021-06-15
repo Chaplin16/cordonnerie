@@ -2,15 +2,20 @@
 $main_color-brown: rgb(160, 113, 86);
 $main_color-cream:rgb(235, 214, 147);
 
-
-//page d'accueil//
-.address{
-    text-align:center;
-    background-color: $main_color-cream;
+//mixin //@
+@mixin title{
     padding-top:1rem;
     padding-bottom: 0.5rem;
     color: $main_color-brown;
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 2px #000; 
+    text-align:center;
+}
+
+//page d'accueil//
+.address{
+    background-color: $main_color-cream;
+    @include title;
+
     & p{
         font-size: 1.5rem;
         font-weight: bold;
@@ -40,9 +45,73 @@ $main_color-cream:rgb(235, 214, 147);
             border-radius: 8px;
             color:$main_color-brown!important;
             padding-left:10px;
-            text-shadow: 2px 1px 2px #000;
+            text-shadow: 1px 1px 1px #000;
         }
     }
 }
+.carousel_size{
+    width: 35rem;
+    margin:auto;
+    & .size{
+        margin:auto;
+        width: 28rem;
+        height: 25rem;
+
+        background-color: #d6d7d8;
+        overflow: hidden;
+    }
+    & h2{
+        text-shadow: 2px 1px 1px #000;
+        color: $main_color-brown;
+    }
+    & .color{
+        color: $main_color-brown!important;
+        margin-bottom:10rem;
+    }
+    & .left{
+        margin-right: 15rem;
+    }
+    & .carousel-control-next-icon,
+    & .carousel-control-prev-icon{
+        background-image: none!important;
+    }
+}
+
+.address_full{
+    @include title;
+    font-size: 1.6rem;
+}
 
 
+// bas de page //
+.footer{
+    background-color: $main_color-brown;
+    padding-bottom: 1rem;
+    & .copyright{
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+    & .director{
+        display: flex;
+        justify-content: center;
+        column-gap: 0.5rem;
+        & img{
+            width:4rem;
+            height: auto;    
+        }
+        & a{
+            color:#fff;
+            text-shadow: 1px 1px 2px #000;
+            text-decoration: none;
+            &:hover{
+                color: #e1ec3c;
+            }
+        }
+    }
+}

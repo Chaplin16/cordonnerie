@@ -1,10 +1,10 @@
 .address {
-  text-align: center;
   background-color: #ebd693;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   color: #a07156;
   text-shadow: 1px 1px 2px #000;
+  text-align: center;
 }
 
 .address p {
@@ -43,6 +43,98 @@
   border-radius: 8px;
   color: #a07156 !important;
   padding-left: 10px;
-  text-shadow: 2px 1px 2px #000;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.carousel_size {
+  width: 35rem;
+  margin: auto;
+}
+
+.carousel_size .size {
+  margin: auto;
+  width: 28rem;
+  height: 25rem;
+  background-color: #d6d7d8;
+  overflow: hidden;
+}
+
+.carousel_size h2 {
+  text-shadow: 2px 1px 1px #000;
+  color: #a07156;
+}
+
+.carousel_size .color {
+  color: #a07156 !important;
+  margin-bottom: 10rem;
+}
+
+.carousel_size .left {
+  margin-right: 15rem;
+}
+
+.carousel_size .carousel-control-next-icon,
+.carousel_size .carousel-control-prev-icon {
+  background-image: none !important;
+}
+
+.address_full {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  color: #a07156;
+  text-shadow: 1px 1px 2px #000;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.footer {
+  background-color: #a07156;
+  padding-bottom: 1rem;
+}
+
+.footer .copyright {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer .director {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+}
+
+.footer .director img {
+  width: 4rem;
+  height: auto;
+}
+
+.footer .director a {
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  text-decoration: none;
+}
+
+.footer .director a:hover {
+  color: #e1ec3c;
 }
 /*# sourceMappingURL=style.css.map */
