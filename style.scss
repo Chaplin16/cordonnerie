@@ -1,12 +1,13 @@
 //variables de couleur //
-$main_color-brown: rgb(160, 113, 86);
-$main_color-cream:#ebd693;
+$main_color-grey: rgb(73, 73, 72);
+$main_color-yellow:#fcd34d;
+$main_color-light-grey: rgb(233, 229, 229);
 
 //mixin //@
 @mixin title{
     padding-top:1rem;
     padding-bottom: 0.5rem;
-    color: $main_color-brown;
+    color: $main_color-grey;
     text-shadow: 1px 1px 2px #000; 
     text-align:center;
 }
@@ -34,9 +35,9 @@ $main_color-cream:#ebd693;
 }
 
 @mixin sunEffect{
-    background: linear-gradient(90deg,  $main_color-brown, $main_color-cream, $main_color-brown);
-    background-size: 70%;
-    animation: animate 10s infinite ease-in;
+    background: linear-gradient(90deg,  $main_color-grey, $main_color-yellow, $main_color-grey);
+    background-size: 80%;
+    animation: animate 15s infinite ease-in;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
@@ -63,17 +64,21 @@ body{
 
 //page d'accueil//
 header h1{
-    background-color: $main_color-cream;
+    background-color: $main_color-yellow;
     @include title;
     margin-bottom: 0;
     & .key-left {
         margin-right:2rem;
         animation: turn 5s infinite ease-out;
     }
+    & p{
+        padding-left:6%;
+    }
+
 }
 
 .navbar{
-    background-color: $main_color-brown!important;
+    background-color: $main_color-grey!important;
 }
 
 .position{
@@ -85,49 +90,60 @@ header h1{
     margin-top: 0.5rem;
     & .nav-item{
         font-weight: 700;
+        align-items: baseline;
     }
-    & .nav-link{
-        color: rgb(51, 48, 48)!important;
+    & .dropdown{
+        margin-top:0.6rem;
+    }
+    & .btnKey{
+        padding:0.7rem 0.6rem 0.55rem 0.6rem;
+        margin-left: -8px;
+    }
+    & .nav-link,
+    & .btnKey{
+        text-decoration: none;
+        background-color: $main_color-light-grey;
+        color: $main_color-grey!important;
         font-size: 1.3rem;
-        border: 3px solid $main_color-cream;
         border-radius: 8px;
         &:hover{
-            background: $main_color-cream;
+            background: $main_color-yellow;
             border-radius: 8px;
-            color:$main_color-brown!important;
-            padding-left:10px;
-            text-shadow: 1px 1px 1px #000;
+            color:$main_color-grey!important;
         }
     }
+
+}
+.navbar-toggler{
+    background-color: $main_color-light-grey!important;
 }
 
 .phone{
     font-weight: bold;
     font-size:1.3rem;
     padding-top:10px;
-    color: rgb(32, 32, 32);
+    color: $main_color-light-grey;
     text-align: center;
 }
 
 main{
-    background: url("images/5-dots.png");
+    background-color:$main_color-light-grey;
     max-width:100%;
     max-height: 100%;
 }
-
-
 
 .carousel-indicators{
     margin-bottom: 0rem!important;
     bottom: -4.5rem!important;
     & [data-bs-target]{
-        background-color: $main_color-brown;
+        background-color: #494948 ;
+        opacity:1!important;
         height: 30px;
         border-radius: 50%;
         margin-right:10px!important;
     }
     & .active{
-        background-color:$main_color-cream!important;
+        background-color:$main_color-yellow!important;
     }
 }
 
@@ -139,17 +155,18 @@ main{
         margin:auto;
         width: 29rem;
         height: 26rem;
-        background-color: $main_color-cream;
+        background-color: $main_color-grey;
         overflow: hidden;
+        object-fit: contain;
     }
     & h2{
         text-shadow: 2px 1px 1px #000;
-        color: $main_color-brown;
+        color: #fff;
         margin-bottom: -2rem!important;
 
     }
     & .color{
-        color: $main_color-cream!important;
+        color: $main_color-grey!important;
         margin-bottom: 5rem;
     }
     & .left{
@@ -161,16 +178,17 @@ main{
     }
 }
 
-h3{
+.main h3{
     text-align: center;
     font-size: 2.7rem;
     margin-top:7rem;
     font-weight: bold;
-@include sunEffect;
+    @include sunEffect;
 }
 
 .address{
-    @include title;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
     font-size: 2rem;
     padding-bottom: 0;
 }
@@ -180,27 +198,35 @@ h3{
     text-align: center;
     font-size: 1.5rem;
     margin-top: 3rem;
-    margin-bottom: 7rem;
-    color: $main_color-cream;
-    max-width:80%;     
+    color: $main_color-grey;
 }
 
-.insert{
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding: 1.5rem;
+.all_services{
+    line-height: 2;
+    max-width: 90%!important;
+    margin-bottom: 2rem!important;
+    & a{
+        color: $main_color-yellow;
+        text-decoration: none;
+        transition: transform 300ms;
+        font-weight: bold;
+        background-color: $main_color-grey;
+        margin: 1rem 1rem;
+        padding: 4px 8px;
+        &:hover{
+            transform: scale(1.03);
+            color: $main_color-light-grey;
+        }
+    }
+    & svg{
+        margin-bottom: 8px;
+        margin-left:8px;
+    }
 }
 
-.await{
-    margin-bottom: 5rem;    
-    border: 4mm ridge $main_color-brown;
-    font-size: 2rem!important;
-    font-weight: bold;
-    font-size: 1.6rem;
-    color:$main_color-cream;
-    animation:  appear 2s infinite;
-    padding:2rem;
+.img-fluid{
+    box-shadow: 5px 5px 5px #000;
+    overflow:hidden;
 }
 
 // bas de page //
@@ -209,7 +235,7 @@ footer{
 }
 
 .footer{
-    background-color: $main_color-brown;
+    background-color: $main_color-grey;
     padding: 1rem;
     display:flex;
     justify-content: center;
@@ -232,12 +258,22 @@ footer{
             height: auto;    
         }
         & a{
-            color:#fff;
+            color:$main_color-yellow;
             text-decoration: none;
             font-weight: bold;
             &:hover{
                 color: #000;
-
+                text-shadow: 1px 1px 2px $main_color-yellow;
+            }
+        }
+        & .law{
+            color:rgb(235, 232, 232);
+            padding-left: 1rem;
+            padding-top: 0.1rem;
+            font-size: 0.9rem!important;
+            &:hover{
+                color: #000!important;
+                text-shadow: 1px 1px 2px #fff;;
             }
         }
     }
@@ -251,14 +287,91 @@ footer{
     }
 }
 
+.card{
+    border: 2px solid $main_color-yellow;
+    box-shadow: 5px 5px 5px #000;
+    & .bg-yellow{
+        background-color: $main_color-yellow;
+    }
+    & img{
+        height: 22rem;
+        object-fit: cover;
+    }
+    h3{
+        font-size: 1.6rem;
+        text-shadow: 1px 2px 2px $main_color-light-grey;
+        margin-top: 0!important;
+        color: #000!important;
+        padding-bottom: 0.3rem;
+    }
+    .card-text::first-letter{
+        margin-left: 2rem;
+    }
+}
+//page key.html
+
+.featurette:nth-of-type(1){
+    animation: appear 500ms ;
+}
+
+.featurette:nth-of-type(2){
+    animation: appear 1500ms 500ms backwards;
+}
+
+.featurette:nth-of-type(3){
+    animation: appear 2000ms 1000ms backwards;
+}
+
+.imgKey{
+    width:250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.key{
+    max-width: 80%;
+    & .textKey{
+        text-align: justify;
+    }
+}
+
+.espace{
+    padding-left: 3.5rem;
+}
+
+
+// page locksmith.html
+.security{
+    & p{
+        font-size: 1.3rem;
+        max-width:80%;
+        margin:auto;
+    }
+    &_img{
+        height: auto;
+        width:auto;
+    }
+}
+
 //page d 'acces //
+.img_funny{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    column-gap: 5rem;
+    & img{
+        height: 28rem;
+        margin-top:2rem;
+        border-radius: 15px;
+    }
+}
 .schedule{
     & h1{
         @include title;
         font-size: 3rem;
         padding-top:3rem;
     }
-    color: $main_color-cream;
+    color: $main_color-grey;
     font-size: 2.5rem;
     text-align: center;
 }
@@ -267,17 +380,77 @@ footer{
     h2{
         @include title;
         font-size: 3rem;
-        padding-top:3rem;
     }
     & iframe {
         margin-left:5%;
         margin-right: 5%;
     }
 }
+.title{
+    text-shadow: 2px 1px 1px #000;
+    color: $main_color-grey;
+    margin-bottom: -2rem!important;
+    font-size: 3rem!important;
+}
 
+.services{
+    justify-content: space-around;
+}
 
+//page law.html
+.mentions{
+    padding-top: 3rem;
+    padding-left:3.5rem;
+    & h1{
+        padding-bottom: 2rem;
+        color: $main_color-yellow;
+        text-shadow: 1px 1px 2px #000; 
+    }
+}
+.return_home{
+    padding-left:7vh;
+    align-items: center;
+    margin-top:3rem;
+    .link_home{
+        text-decoration: none;
+        color: $main_color-yellow;
+        text-shadow: 1px 1px 2px #000; 
+        font-weight: bold;
+        padding-bottom: 45%;
+        &:hover{
+            color: rgb(88, 88, 88);
+            font-weight: normal;
+        }
+        & .arrow{
+            width:40px;
+            margin-right: 1rem;
+        }
+    }
+}
 
-@media all and (max-width:950px){
+.scroll_to_top{
+    position: fixed;
+    bottom : 1rem;
+    right: 0.6rem;
+    color: $main_color-grey;
+    border: 3px solid $main_color-grey;
+    border-radius: 8px;
+    background-color: $main_color-yellow;
+}
+
+@media all and (min-width:1250px){
+    .key{
+        max-width: 60%;
+    }
+}
+
+@media all and (min-width:900px){
+    .img-fluid{
+        max-width: 60%!important;
+    }
+}
+
+@media all and (max-width:990px){
     .insert {
         margin-left: 10%!important;
         margin-right: 10%!important;
@@ -290,23 +463,56 @@ footer{
             }
         }
     }
+    .img_funny {
+        column-gap: 4rem;
+        & .schedule{
+            font-size: 2rem;
+        }
+    }
+    .nav-item .nav-link:hover{
+        background-color: $main_color-light-grey!important;
+        color:#000!important;
+        text-shadow: 0.5px 0.5px 1px #000;
+    }
+    .dropdown{
+        width: 100%!important;
+        background-color: $main_color-light-grey;
+        padding:0.6rem;
+        border-radius: 8px;
+        margin-top:0!important;
+        & .btnKey:hover{
+            background-color: $main_color-light-grey;
+            color:#000!important;
+            text-shadow: 0.5px 0.5px 1px #000;
+        }
+    }
 }
 
 @media all and (max-width:720px){
     .carousel_size{
-        width: 85%;
+        width: 90%;
         height:auto;
         & .size{
             width: 75%;
             height: 22rem;
         }
     }
-    & .carousel_size .right,
-    & .carousel_size .left{
+    .carousel_size .right,
+    .carousel_size .left{
         display: none;
     }
+    .img_funny {
+        column-gap: 2rem;
+        & .schedule{
+            font-size: 1.8rem;
+        }
+    }
 }
-@media all and (max-width: 450px){
+
+@media all and (max-width: 680px){
+    .schedule h1{
+        font-size: 3rem!important;
+    }
     .footer{
         flex-direction: column;
         text-align: center;
@@ -318,8 +524,59 @@ footer{
             width: 80%;
             margin:auto;
             padding-top:0.5rem;
+            padding-bottom:1rem;
+        }
+        & .director{
+            display: flex;
+            flex-direction: column;
+            column-gap: 0.5rem;
+            & img{
+                width:4.5rem;
+                max-height: 2.5rem;
+                margin:auto;
+            }
+            & a{
+      
+                &:hover{
+                    color: $main_color-yellow;
+                    text-shadow: 0 0 0 #000;
+                }
+            }
+        }
+        & .law{
+            color: rgb(223, 221, 221)!important;
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            font-size: 0.8rem!important;
+            &:hover{
+                color: #000!important;
+                text-shadow: 1px 1px 2px #fff;;
+            }
         }
     }
+}
+
+@media all and (max-width: 550px){
+    .img_funny{
+        flex-direction: column;
+    }
+    .presentation{
+        font-size:1.3rem;
+        margin: 0 1rem;
+        & .all_services a {
+            margin: 6px!important;
+            font-size: 1.1rem;
+        }
+    }
+    .address{
+        font-size: 1.6rem;
+    }
+    .main h3{
+        font-size: 2.4rem;
+    }
+}
+
+@media all and (max-width: 450px){
     h3{
         font-size: 2.1rem;
     }
@@ -338,6 +595,12 @@ footer{
             width: 85%;
             height: 16rem;
         }
+    }
+    .mentions{
+        padding-left:2rem;
+    }
+    .all_services{
+        font-size: 1.2rem;
     }
 }
 
